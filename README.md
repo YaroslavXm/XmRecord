@@ -1,4 +1,4 @@
-# XmRecord
+<img src="https://raw.githubusercontent.com/YaroslavXm/XmRecord/refs/heads/main/res/XmRecordScreenRecorder.png"></img>
 
 Open-Soure screen recorder on python
 
