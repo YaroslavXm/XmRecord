@@ -112,7 +112,7 @@ class SettingsWindow:
 class App:
     def __init__(self, root):
         self.root = root
-        self.root.title("XmRecord")
+        self.root.title("XmRecord | v1.0")
         self.language = 0  # 0 - Русский / Russian, 1 - Английский / English
         self.recorder = ScreenRecorder()
         
