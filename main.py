@@ -43,9 +43,6 @@ class ScreenRecorder:
     def stop_recording(self):
         self.recording = False
 
-    def donateOpen(url):
-        webbrowser.open_new(url)
-
 class SettingsWindow:
     def __init__(self, master, recorder, language_callback):
         self.recorder = recorder
@@ -83,7 +80,6 @@ class SettingsWindow:
             "Save": ["Сохранить", "Save"],
             "Settings": ["Настройки", "Settings"],
             "Select Language:": ["Выберите язык:", "Select Language:"],
-            "Donate": ["Донат","Donate"]
         }
         return translations[text_key][self.language_callback()]
 
@@ -140,7 +136,6 @@ class App:
         self.stop_button.config(text=self.get_text("Stop Recording"))
         self.settings_button.config(text=self.get_text("Settings"))
         self.status_label.config(text=self.get_text("Status: Waiting..."))
-        self.donate_button.config(text=self.get_text("Donate"))
 
     def get_text(self, text_key):
         translations = {
@@ -150,7 +145,6 @@ class App:
             "Status: Waiting...": ["Статус: Ожидание...", "Status: Waiting..."],
             "Status: Recording...": ["Статус: Запись...", "Status: Recording..."],
             "Status: Recording stopped!": ["Статус: Запись остановлена!", "Status: Recording stopped!"],
-            "Donate": ["Донат","Donate"]
         }
         return translations[text_key][self.language]
 
@@ -169,9 +163,6 @@ class App:
 
         self.status_label = tk.Label(self.root, text=self.get_text("Status: Waiting..."))
         self.status_label.pack(pady=20)
-
-        self.donate_button = tk.Button(control_frame, text=self.get_text("Donate"), command=webbrowser.open("https://www.donationalerts.com/r/xmgam3s"))
-        self.donate_button.pack(side=tk.LEFT, padx=5)
 
     def open_settings(self):
         SettingsWindow(self.root, self.recorder, lambda: self.language)
